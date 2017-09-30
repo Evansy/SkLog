@@ -76,7 +76,3 @@ var newArr = [].concat(arr);
 newArr[2] = 2;
 console.log(arr, newArr);     // [1, 5, 9] [1, 5, 2]
 ```
-
-
-#### Function
-> 暂未用到，后续补充

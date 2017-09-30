@@ -1,7 +1,7 @@
 ## webpack dll 公共包提取
-> 项目中经常包含很多不常更改的库，每次打包的时候都非常慢，这里讲项目中用到的类库提取成dll.js，只用打包一次，后面就引用这个就行了，这样可以大幅提高打包速度。
-> 通常结合DllReferencePlugin，DllPlugin来达到提取dll,优化打包速度的目的；DllPlugin来执行提取操作，DllReferencePlugin来告诉webpack哪些类已经打包过啦，你不用再管啦。
-> 这里基于的是vue-cli的配置做的更改
+> - 项目中经常包含很多不常更改的库，每次打包的时候都非常慢，这里讲项目中用到的类库提取成dll.js，只用打包一次，后面就引用这个就行了，这样可以大幅提高打包速度。
+> - 通常结合DllReferencePlugin，DllPlugin来达到提取dll,优化打包速度的目的；DllPlugin来执行提取操作，DllReferencePlugin来告诉webpack哪些类已经打包过啦，你不用再管啦。
+> - 这里基于的是vue-cli的配置做的更改
 
 ## 操作流程
 #### 1. 在build文件夹新增webpack.dll.js文件
