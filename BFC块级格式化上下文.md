@@ -27,7 +27,7 @@
 ### BFC的应用领域
 * 防止margin重叠
 * 清除浮动
-* 多兰布局
+* 多栏布局
 
 ### 参考文章
 http://www.cnblogs.com/dojo-lzz/p/3999013.html
