@@ -1,5 +1,5 @@
 ## webpack dll 公共包提取
-> - 项目中经常包含很多不常更改的库，每次打包的时候都非常慢，这里讲项目中用到的类库提取成dll.js，只用打包一次，后面就引用这个就行了，这样可以大幅提高打包速度。
+> - 项目中经常包含很多不常更改的库，每次打包的时候都非常慢，而且最后vendor.js特别大，这里将项目中用到的类库提取成dll.js，只用打包一次，后面就引用这个就行了，这样可以大幅提高打包速度并且减小vendor的体积。
 > - 通常结合DllReferencePlugin，DllPlugin来达到提取dll,优化打包速度的目的；DllPlugin来执行提取操作，DllReferencePlugin来告诉webpack哪些类已经打包过啦，你不用再管啦。
 > - 这里基于的是vue-cli的配置做的更改
 
@@ -101,3 +101,13 @@ plugins: [
 <script  src="<%= webpackConfig.output.publicPath %>static/js/vendor.dll.js"></script>
 ```
 
+#### 4. 更改根目录下packge.json里面的scripts里添加dll打包命令
+```js
+"build:dll": "webpack --config build/webpack.dll.conf.js"
+
+// 添加如下命令可以运行npm run analyz来查看你项目中各个包的体积占比
+"analyz": "NODE_ENV=production npm_config_report=true npm run build",
+```
+
+#### 5. 运行npm run build:dll，static/js里面会多一个vendor.dll.js，dll提取就完成了啦。
+> 实测，dll提取之后，npm run build原来打包需要70s, 现在只要27s，速度确实提升不少，还有个利用多线程提高打包速度的HappyPack，有兴趣可以了解一下。
