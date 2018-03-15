@@ -75,4 +75,9 @@ console.log(arr, copyArr);    // [1, 5, 9] [1, 5, 9]
 var newArr = [].concat(arr);
 newArr[2] = 2;
 console.log(arr, newArr);     // [1, 5, 9] [1, 5, 2]
+
+2018.3.15补充
+var newArr = arr.slice();
+newArr[2] = 10;
+console.log(arr, newArr);     // [1, 5, 2] [1, 5, 10]
 ```
