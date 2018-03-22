@@ -1,11 +1,11 @@
 ## BFC 块级格式化上下文 (Block Formatting Context)
 
 ### BFC的触发
-* `flaot`       不为`none`
+* `float`       不为`none`
 * `overflow`    为`hidden`、`auto`
 * `display`     为`table-cell`、`table-caption`、`inline-block`
 * `position`    为`fixed`、`absolute`
- > display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-ccell生成了BFC
+ > display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-cell生成了BFC
 
  ### BFC的约束
 
